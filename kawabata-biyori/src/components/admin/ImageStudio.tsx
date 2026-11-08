@@ -39,7 +39,7 @@ export function ImageStudio({ initial, articles, demo }: { initial: Media[]; art
   const versions = current ? history.filter((m) => m.id === current.id || m.parent_id === current.id || m.id === current.parent_id || (current.parent_id && m.parent_id === current.parent_id)) : [];
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[380px_minmax(0,1fr)]">
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[380px_minmax(0,1fr)]">
       <Panel title="画像を作る">
         <div className="space-y-4">
           <Field label="どんな画像にしますか？" required hint="実在するお店や人物の写真の代わりには使わないでください。">

@@ -39,7 +39,7 @@ export function MediaLibrary({ initial, demo }: { initial: Media[]; demo: boolea
         <button type="button" disabled={demo || busy} onClick={() => file.current?.click()} className={btnPrimary}>{busy ? "アップロード中…" : "画像をアップロード"}</button>
         <span className="self-center text-xs text-muted">JPEG・PNG・WebP。アップロード時に最大2000px・WebPへ最適化します。</span>
       </div>
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
         <ul className="grid grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-5">
           {shown.map((m) => (
             <li key={m.id}>

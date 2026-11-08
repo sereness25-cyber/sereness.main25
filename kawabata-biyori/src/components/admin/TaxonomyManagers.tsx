@@ -33,8 +33,8 @@ export function CategoryManager({ categories, demo }: { categories: Category[]; 
   return (
     <>
       {node}
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
-        <ul className="divide-y divide-[#f1ebe3] rounded-2xl bg-white shadow-soft">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
+        <ul className="min-w-0 divide-y divide-[#f1ebe3] rounded-2xl bg-white shadow-soft">
           {list.map((c, i) => (
             <li key={c.id} className="flex items-center gap-3 px-4 py-3">
               <div className="flex flex-col">
@@ -45,7 +45,7 @@ export function CategoryManager({ categories, demo }: { categories: Category[]; 
                 <p className="font-bold text-navy">{c.name} <span className="text-xs font-normal text-muted">/{c.slug}</span></p>
                 <p className="truncate text-xs text-muted">{c.description}</p>
               </div>
-              <button type="button" onClick={() => setEdit(c)} className={btnSecondary}>編集</button>
+              <button type="button" onClick={() => setEdit(c)} className={`${btnSecondary} shrink-0`}>編集</button>
             </li>
           ))}
         </ul>
@@ -98,8 +98,8 @@ export function TagManager({ tags, demo }: { tags: (Tag & { count: number })[]; 
   return (
     <>
       {node}
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
-        <ul className="flex flex-wrap content-start gap-2 rounded-2xl bg-white p-4 shadow-soft">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+        <ul className="flex min-w-0 flex-wrap content-start gap-2 rounded-2xl bg-white p-4 shadow-soft">
           {tags.map((t) => (
             <li key={t.id}>
               <button type="button" onClick={() => setEdit(t)} className="rounded-full border border-[#e2d8cc] px-3 py-1.5 text-sm text-navy hover:bg-ivory">#{t.name} <span className="text-xs text-muted">{t.count}</span></button>
