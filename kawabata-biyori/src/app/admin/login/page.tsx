@@ -2,6 +2,7 @@ import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { LoginForm } from "./LoginForm";
 
 export const metadata = { title: "ログイン" };
+export const dynamic = "force-dynamic";
 
 export default function LoginPage() {
   return (
